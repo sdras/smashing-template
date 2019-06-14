@@ -1,0 +1,300 @@
+/* =========================== Variables ==================================== */
+
+$dark: #141618;
+$light: #b5b3b3;
+$pink: #aa0753;
+$lavender: #7f7ff8;
+$purple: #4444FF;
+$green: #10882a;
+
+/* =========================== Global ==================================== */
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: white;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+.logo {
+  font-family: "Gotham XNarrow A", "Gotham XNarrow B", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-style: normal;
+  color: white;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+code {
+  background: #eee;
+    padding: 4px 10px;
+    border-radius: 6px;
+}
+
+.tag {
+  font-family: "Gotham XNarrow A", "Gotham XNarrow B", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-style: normal;
+  margin: 10px 10px 10px 0;
+  display: inline-block;
+  font-size: 13px;
+  padding: 4px 20px;
+  border-radius: 2px;
+  color: $lavender;
+  border: 1px solid $lavender;
+}
+
+p,
+li {
+  color: $light;
+  font-size: 18px;
+  font-display: swap;
+  a {
+    font-weight: 600;
+    color: white;
+  }
+}
+
+main {
+  margin: 8vmin;
+}
+
+input, textarea {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 10px 0 20px;
+  font-size: 15px;
+  padding: 5px;
+  background: #444;
+  border: black;
+  border-bottom: 1px solid $purple;
+  color: white;
+}
+
+label {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 13px;
+  font-family: 
+    "Segoe UI", Roboto, "Helvetica Neue", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+}
+
+button {
+  background: none;
+  border: 1px solid $lavender;
+  color: $lavender;
+  border-radius: 1000px 1000px;
+  padding: 10px;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 13px;
+  font-family: "Gotham XNarrow A", "Gotham XNarrow B", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  transition: 0.25s all ease;
+  cursor: pointer;
+  outline: none;
+  &:active {
+    outline: 1px dotted #666;
+  }
+  &:hover {
+    background: $purple;
+    color: white;
+    border-color: $purple;
+  }
+}
+
+button[type="submit"] {
+  background: $purple;
+  border: none;
+  color: white;
+}
+
+.hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+
+/* =========================== Navigation ==================================== */
+
+ul.site-links {
+  font-family: "Gotham XNarrow A", "Gotham XNarrow B", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 500;
+  padding-left: 0;
+  list-style: none;
+  text-transform: uppercase;
+  font-size: 20px;
+  margin-top: 3px;
+  opacity: 0.8;
+}
+
+.site-links li, .social-links svg {
+  display: inline-block;
+  padding-right: 15px;
+}
+
+.social-links a {
+  color: white;
+}
+
+
+/* =========================== Glitchy pages ==================================== */
+
+
+//https://codepen.io/marcellegane/pen/GoGVQe
+.glitch {
+  position: relative;
+  color: white;
+  mix-blend-mode: lighten;
+
+  &:before,
+  &:after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: $dark;
+    clip: rect(0, 0, 0, 0);
+  }
+
+  &:before {
+    left: -1px;
+    text-shadow: 4px 0 rgba(red, 0.7);
+    animation: glitch-loop-1 0.8s infinite ease-in-out alternate-reverse;
+  }
+
+  &:after {
+    left: 1px;
+    text-shadow: -7px 0 rgba(blue, 0.7);
+    animation: glitch-loop-2 1s infinite ease-in-out alternate-reverse;
+  }
+}
+
+@keyframes glitch-loop-1 {
+  0% {
+    clip: rect(36px, 9999px, 9px, 0);
+  }
+  25% {
+    clip: rect(25px, 9999px, 99px, 0);
+  }
+  50% {
+    clip: rect(50px, 9999px, 102px, 0);
+  }
+  75% {
+    clip: rect(20px, 9999px, 92px, 0);
+  }
+  100% {
+    clip: rect(100px, 9999px, 98px, 0);
+  }
+}
+
+@keyframes glitch-loop-2 {
+  0% {
+    top: -1px;
+    left: 1px;
+    clip: rect(65px, 9999px, 119px, 0);
+  }
+  25% {
+    top: -8px;
+    left: 2px;
+    clip: rect(79px, 9999px, 19px, 0);
+  }
+  50% {
+    top: -3px;
+    left: 2px;
+    clip: rect(68px, 9999px, 11px, 0);
+  }
+  75% {
+    top: 0px;
+    left: -2px;
+    clip: rect(95px, 9999px, 53px, 0);
+  }
+  100% {
+    top: -1px;
+    left: -4px;
+    clip: rect(31px, 9999px, 149px, 0);
+  }
+}
+
+/* =========================== Tables ==================================== */
+
+thead {
+  font-family: Helvetica, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #888;
+  text-align: left;
+  border-bottom: 1px solid #666;
+  th {
+    font-weight: normal;
+    letter-spacing: 0.05em;
+    font-size: 14px;
+  }
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td,
+th {
+  border-bottom: 1px solid rgb(75, 74, 74);
+  padding: 0.8rem 0;
+  text-align: left;
+}
+
+tr {
+  transition: 0.15s all ease;
+}
+
+tr:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* =========================== Animations ==================================== */
+
+.list-item {
+  transition: all 1s;
+}
+.list-enter, .list-leave-to {
+  opacity: 0;
+  transform: translateY(30px);
+}
+.list-leave-active {
+  position: absolute;
+}
+
+/* =========================== Blog posts ==================================== */
+
+pre {
+  white-space: pre-wrap;
+  background: #ddd;
+  border-radius: 4px;
+  padding: 8px;
+}
