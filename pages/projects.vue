@@ -17,34 +17,6 @@
       </div>
     </section>
 
-    <section class="codepen">
-      <h2>CodePen</h2>
-      <div v-for="project in codepenProjects" :key="project.id">
-        <h3>{{ project.title }}</h3>
-        <p v-html="project.details"></p>
-        <a :href="`https://codepen.io/sdras/full/${project.id}`" target="_blank">
-          <button>See pen ⟶</button>
-        </a>
-
-        <iframe
-          height="400"
-          style="width: 100%;"
-          scrolling="no"
-          :title="project.title"
-          :src="`//codepen.io/jfksdca/embed/${project.id}/?height=400&theme-id=22041&default-tab=result`"
-          frameborder="no"
-          allowtransparency="true"
-          allowfullscreen="true"
-        >
-          See the Pen
-          <a :href="`https://codepen.io/sdras/${project.id}`">{{ project.title }}</a> by Sarah Drasner (
-          <a href="https://codepen.io/sdras">@sdras</a>)
-          on
-          <a href="https://codepen.io">CodePen</a>.
-        </iframe>
-      </div>
-    </section>
-
     <section class="github">
       <h2>GitHub</h2>
       <table>
@@ -89,7 +61,7 @@ export default {
     }
   },
   computed: {
-    ...mapState(["codepenProjects", "githubProjects"])
+    ...mapState(["githubProjects"])
   },
   filters: {
     replaceSpace(value) {
