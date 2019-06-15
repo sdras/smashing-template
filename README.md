@@ -1,4 +1,4 @@
-# new-sdd
+# Smashing Starter Template
 
 > My cat&#39;s pajamas Nuxt.js project
 
