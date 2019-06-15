@@ -1,11 +1,5 @@
 import pkg from "./package";
 
-var glob = require("glob");
-var path = require("path");
-var dynamicRoutes = getDynamicPaths({
-  "/blog": "*.json"
-});
-
 export default {
   mode: "universal",
 
@@ -53,7 +47,6 @@ export default {
    ** Plugins to load before mounting the App
    */
   plugins: [
-    "~/plugins/blog.server.js",
     "~/plugins/projects.server.js",
     "~/plugins/vuelidate"
   ],
@@ -82,10 +75,6 @@ export default {
     scss: ["assets/main.scss"]
   },
 
-  generate: {
-    routes: dynamicRoutes
-  },
-
   /*
    ** Build configuration
    */
@@ -97,18 +86,3 @@ export default {
   }
 };
 
-// helpers
-/**
- * Create an array of URLs from a list of files
- * @param {*} urlFilepathTable
- */
-function getDynamicPaths(urlFilepathTable) {
-  return [].concat(
-    ...Object.keys(urlFilepathTable).map(url => {
-      var filepathGlob = urlFilepathTable[url];
-      return glob
-        .sync(filepathGlob, { cwd: "blog" })
-        .map(filepath => `${url}/${path.basename(filepath, ".json")}`);
-    })
-  );
-}
