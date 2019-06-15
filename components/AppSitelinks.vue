@@ -1,12 +1,6 @@
 <template>
   <ul class="site-links">
     <li>
-      <nuxt-link to="/writing">writing</nuxt-link>
-    </li>
-    <li>
-      <nuxt-link to="/speaking">speaking</nuxt-link>
-    </li>
-    <li>
       <nuxt-link to="/projects">projects</nuxt-link>
     </li>
   </ul>
