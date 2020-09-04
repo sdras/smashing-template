@@ -18,7 +18,7 @@
     "cross-env": "^5.2.0",
     "gsap": "^2.1.2",
     "netlify-cms": "^2.9.1",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.13.1",
     "nuxt": "^2.6.2",
     "sass-loader": "^7.1.0",
     "three": "^0.104.0",
